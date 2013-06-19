@@ -1,0 +1,175 @@
+set nocompatible
+filetype off
+filetype indent off
+filetype plugin off
+
+if has('win32')
+else
+  " git clone http://github.com/gmarik/vundle.git ~/.vim/vundle.git
+  set rtp+=~/.vim/vundle.git/
+  call vundle#rc()
+
+  " :BundleInstall!
+  " Bundle 'rails.vim'
+  " Bundle 'altercation/vim-colors-solarized'
+  " Bundle 'tpope/vim-rails'
+  Bundle 'Shougo/neocomplcache'
+  Bundle 'Shougo/unite.vim'
+  " Bundle 'unite.vim'
+  " Bundle 'git://github.com/vim-ruby/vim-ruby.git'
+
+  " Bundle 'scrooloose/nerdcommenter'
+  " Bundle 'tpope/vim-surround'
+  " Bundle 'thinca/vim-quickrun'
+  " Bundle 'thinca/vim-ref'
+  " Bundle 'kana/vim-fakeclip'
+endif
+
+" grep後にcwinを表示
+" autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
+
+"---------------------------------------------------------------------------
+
+if has('win32')
+  colorscheme darkblue
+  set guifont=MS_Gothic:h8:cSHIFTJIS
+"  set linespace=1
+"  " 一部のUCS文字の幅を自動計測して決める
+"  if has('kaoriya')
+"    set ambiwidth=auto
+"  endif
+elseif has('mac')
+  " macvim
+  colorscheme darkblue
+elseif has('unix')
+  " mac terminal
+  colorscheme desert
+  " let g:solarized_termcolors=256
+  " let g:solarized_termtrans=1
+  " let g:solarized_visibility="high"
+  " let g:solarized_contrast="high"
+  " colorscheme solarized
+  " set background=dark
+" elseif has('xfontset')
+"   " UNIX用 (xfontsetを使用)
+"   set guifontset=a10,r10,k10
+else
+  " ubuntu
+  colorscheme slate
+endif
+
+"カーソルを表示行で移動する。物理行移動は<C-n>,<C-p>
+nnoremap j gj
+nnoremap k gk
+
+" ctags で対象複数の場合は一覧表示する
+nnoremap <C-]> g<C-]>
+
+" Insert mode でのカーソル移動
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-a> <Home>
+inoremap <C-e> <End>
+inoremap <C-d> <Del>
+inoremap <C-k> <C-o>D
+
+set directory=~/swp
+set clipboard=unnamed,autoselect
+set nu
+"印刷時行番号も出力
+set printoptions=number:y
+set expandtab
+set shiftround
+set autoindent
+set backspace=indent,eol,start
+
+"set encoding=japan
+"set fileencoding=euc-jp
+set encoding=utf-8
+set fileencoding=utf-8
+" set termencoding=utf-8
+" set fileencodings=euc-jp,iso-2022-jp
+
+set hidden
+set history=50
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+
+set noswapfile
+set nobackup
+" set backup
+" set backupdir=~/.vimbackup
+" let &directory = &backupdir
+
+
+set ruler
+
+" set wrap
+set nowrap
+set ic
+" set noic
+
+set tabstop=4
+set shiftwidth=4
+autocmd FileType perl set tabstop=2
+autocmd FileType perl set shiftwidth=2
+autocmd FileType ruby set tabstop=2
+autocmd FileType ruby set shiftwidth=2
+autocmd FileType javascript set tabstop=2
+autocmd FileType javascript set shiftwidth=2
+
+set showcmd
+set showmatch
+set smartcase
+set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
+set wrapscan
+
+"autocmd CursorHold * update
+set updatetime=500
+
+set iminsert=0 imsearch=0
+
+" Hard Tabs
+" set listchars=tab:>-,trail:%,eol:↲,nbsp:x
+" set listchars=tab:>-,eol:↲,nbsp:x
+set listchars=tab:>-,eol:↲
+set list
+
+
+inoremap ,date <C-R>=strftime("%Y/%m/%d %H:%M:%S")<CR>
+iabbrev ,# # -------------------------------------------------------------------------
+iabbrev .# # =========================================================================
+
+" perl test
+"       augroup filetypedetect
+"       autocmd! BufNewFile,BufRead *.t setf perl
+"       augroup END
+
+
+" minibufexpl.vim の設定
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBuffs = 1
+
+
+" 自動cd
+" ref. http://nanasi.jp/articles/vim/cd_vim.html
+
+
+au BufEnter * execute ":lcd " . expand("%:p:h")
+
+
+" ChangeLog
+let g:changelog_username = 'kazuma <idkazuma@gmail.com>'
+
+" netrw tree view
+let g:netrw_liststyle = 3
+
+syntax on
+highlight ZenkakuSpace ctermbg=6 guibg=cyan
+match ZenkakuSpace /\s\+$\|　/
+
+filetype plugin indent on
+
