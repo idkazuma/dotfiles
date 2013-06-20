@@ -120,13 +120,19 @@ bindkey "^N" history-beginning-search-forward-end
 
 # alias
 case ${OSTYPE} in
-    darwin*)
-        alias ls='ls -FG'
-        alias mvim='open -a MacVim'
-        ;;
-    linux*)
-        alias ls='ls -F --color'
-        ;;
+  darwin*)
+    # change the color of directory to light blue.
+    export LSCOLORS=gxfxcxdxbxegedabagacad
+    alias ls='ls -FG'
+    alias mvim='open -a MacVim'
+    ;;
+  linux*)
+    # LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
+    # export LS_COLORS
+    # export LS_COLORS="di=01;34"
+    export LS_COLORS="di=35;40"
+    alias ls='ls -F --color'
+    ;;
 esac
 
 alias la='ls -al'
@@ -140,8 +146,6 @@ alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 
 # zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
-# change the color of directory to light blue.
-export LSCOLORS=gxfxcxdxbxegedabagacad
 
 # RVM
 # [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
