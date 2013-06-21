@@ -89,8 +89,8 @@ setopt list_types
 
 # history
 HISTFILE=~/.zsh_history
-# ファイルサイズ
-HISTSIZE=1000000
+# メモリ内の履歴の数
+HISTSIZE=100000
 # saveする量
 SAVEHIST=1000000
 # 重複を記録しない
@@ -101,8 +101,6 @@ setopt hist_ignore_space
 setopt share_history
 # 実行時刻と実行時間も保存する
 setopt extended_history
-# zshの開始終了を記録
-# setopt EXTENDED_HISTORY
 
 # 3秒以上かかったら報告
 REPORTTIME=3
