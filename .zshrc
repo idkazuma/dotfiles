@@ -72,7 +72,7 @@ compinit -u
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 
 # ディレクトリ名だけで cd
-setopt auto_cd
+# setopt auto_cd
 # 重複は記憶しない
 setopt pushd_ignore_dups
 
@@ -133,6 +133,7 @@ case ${OSTYPE} in
     ;;
 esac
 
+alias ..='cd ..'
 alias la='ls -al'
 alias lr='ls -altrh'
 alias mv='mv -i'
@@ -141,6 +142,11 @@ alias p=popd
 alias bi='bundle install'
 alias be='bundle exec'
 alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+alias g='git'
+alias gb='git branch'
+alias gba='git branch -a'
+alias gc='git checkout'
+
 
 # zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
 
