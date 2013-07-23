@@ -11,7 +11,7 @@ else
 
   " :BundleInstall!
   " Bundle 'rails.vim'
-  " Bundle 'altercation/vim-colors-solarized'
+  Bundle 'altercation/vim-colors-solarized'
   " Bundle 'tpope/vim-rails'
   Bundle 'Shougo/neocomplcache'
   Bundle 'Shougo/unite.vim'
@@ -40,7 +40,15 @@ if has('win32')
 "  endif
 elseif has('mac')
   " macvim
-  colorscheme darkblue
+  " colorscheme darkblue
+  let g:solarized_termcolors=256
+  " exe "hi Comment" . s:fg_base01 .s:bg_base02 .s:fmt_none
+  let g:solarized_termtrans=1
+  let g:solarized_visibility="high"
+  let g:solarized_contrast="high"
+  colorscheme solarized
+  set background=dark
+
 elseif has('unix')
   " mac terminal
   colorscheme desert
@@ -172,6 +180,19 @@ let g:netrw_liststyle = 3
 syntax on
 highlight ZenkakuSpace ctermbg=6 guibg=cyan
 match ZenkakuSpace /\s\+$\|　/
+
+" カーソル行をハイライト
+set cursorline
+" カレントウィンドウにのみ罫線を引く
+augroup cch
+  autocmd! cch
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
+
+hi clear CursorLine
+hi CursorLine gui=underline
+highlight CursorLine ctermbg=black guibg=black
 
 filetype plugin indent on
 
