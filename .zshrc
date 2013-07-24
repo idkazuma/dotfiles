@@ -122,10 +122,10 @@ case ${OSTYPE} in
     # change the color of directory to light blue.
     export LSCOLORS=gxfxcxdxbxegedabagacad
     alias ls='ls -FG'
-    alias mvim='open -a MacVim'
     export EDITOR=/Applications/MacVim.app/Contents/MacOS/Vim
     alias vi='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
     alias vim='env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim "$@"'
+    alias mvim='open -a MacVim'
     ;;
   linux*)
     # LS_COLORS="di=34;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=0;46:tw=0;42:ow=0;43:"
