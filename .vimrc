@@ -43,7 +43,7 @@ elseif has('mac')
   " colorscheme darkblue
   let g:solarized_termcolors=256
   " exe "hi Comment" . s:fg_base01 .s:bg_base02 .s:fmt_none
-  let g:solarized_termtrans=1
+  " let g:solarized_termtrans=1
   let g:solarized_visibility="high"
   let g:solarized_contrast="high"
   colorscheme solarized
@@ -192,7 +192,7 @@ augroup END
 
 hi clear CursorLine
 hi CursorLine gui=underline
-highlight CursorLine ctermbg=black guibg=black
+highlight CursorLine ctermbg=darkblue guibg=darkblue
 
 filetype plugin indent on
 
