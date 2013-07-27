@@ -20,8 +20,12 @@ PS1=%F{5}%#%f
 # PS1=%F{7}%K{6}%#%k%f
 # PS1=%F{7}%K{6}%/%#%k%f
 # RPROMPT=%F{7}%K{6}%T%k%f
-RPROMPT=%F{5}%T%f
+
+# 時間出す
+# RPROMPT=%F{5}%T%f
+
 export MYSQL_PS1="(\u@\h) [\d]>"
+
 # %M  ホスト名    localhost.localdomain
 # %m  ホスト名    localhost
 # %n  ユーザ名    root
