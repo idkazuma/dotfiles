@@ -130,6 +130,9 @@ autocmd FileType eruby set shiftwidth=2
 autocmd FileType javascript set tabstop=2
 autocmd FileType javascript set shiftwidth=2
 
+"text witdh
+set tw=0
+
 set showcmd
 set showmatch
 set smartcase
