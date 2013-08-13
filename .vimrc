@@ -111,6 +111,8 @@ set nobackup
 " set backupdir=~/.vimbackup
 " let &directory = &backupdir
 
+" 自動再読み込み
+set autoread
 
 set ruler
 
@@ -133,8 +135,16 @@ autocmd FileType javascript set shiftwidth=2
 "text witdh
 set tw=0
 
+" 入力中のコマンドを表示
 set showcmd
+
+" 対応する括弧の表示
 set showmatch
+
+" 補完候補を表示する
+set wildmenu
+
+
 set smartcase
 set statusline=%<%f\ %m%r%h%w%{'['.(&fenc!=''?&fenc:&enc).']['.&ff.']'}%=%l,%c%V%8P
 set wrapscan
