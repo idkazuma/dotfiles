@@ -18,6 +18,7 @@ else
   " Bundle 'unite.vim'
   " Bundle 'git://github.com/vim-ruby/vim-ruby.git'
 
+  Bundle 'nathanaelkane/vim-indent-guides'
   " Bundle 'scrooloose/nerdcommenter'
   " Bundle 'tpope/vim-surround'
   " Bundle 'thinca/vim-quickrun'
@@ -86,7 +87,6 @@ set clipboard=unnamed,autoselect
 set nu
 "印刷時行番号も出力
 set printoptions=number:y
-set expandtab
 set shiftround
 set autoindent
 set backspace=indent,eol,start
@@ -121,6 +121,9 @@ set nowrap
 set ic
 " set noic
 
+" tab じゃない space
+set expandtab
+
 set tabstop=4
 set shiftwidth=4
 autocmd FileType perl set tabstop=2
@@ -131,6 +134,8 @@ autocmd FileType eruby set tabstop=2
 autocmd FileType eruby set shiftwidth=2
 autocmd FileType javascript set tabstop=2
 autocmd FileType javascript set shiftwidth=2
+
+
 
 "text witdh
 set tw=0
@@ -207,5 +212,43 @@ hi clear CursorLine
 hi CursorLine gui=underline
 highlight CursorLine ctermbg=darkblue guibg=darkblue
 
+
+
+"===================================================================
+" vim-indent-guides
+"===================================================================
+" vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
+let g:indent_guides_enable_on_vim_startup=1
+
+" 1インデント目からガイドする
+let g:indent_guides_start_level=1
+
+" 自動カラーを無効にする
+let g:indent_guides_auto_colors=0
+
+" 奇数インデントのガイドカラー
+"hi IndentGuidesOdd  ctermbg=green
+hi IndentGuidesOdd  ctermbg=yellow
+" 偶数インデントのガイドカラー
+"hi IndentGuidesEven ctermbg=lightcyan
+hi IndentGuidesEven ctermbg=lightcyan
+
+" ハイライト色の変化の幅 (Terminal では未サポート)
+"let g:indent_guides_color_change_percent = 20
+
+" ガイドの幅
+let g:indent_guides_guide_size = 1
+
+" ガイド幅をインデント幅に合わせる
+"let g:indent_guides_guide_size = &tabstop
+
+
+
+
 filetype plugin indent on
+
+
+" memo
+":so $VIMRUNTIME/syntax/colortest.vim
+
 
