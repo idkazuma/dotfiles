@@ -153,6 +153,7 @@ alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git checkout'
+alias ta='tmux a'
 
 
 # zstyle ':completion:*' list-colors 'di=34' 'ln=35' 'so=32' 'ex=31' 'bd=46;34' 'cd=43;34'
