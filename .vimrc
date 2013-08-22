@@ -167,6 +167,8 @@ set list
 
 
 inoremap ,date <C-R>=strftime("%Y/%m/%d %H:%M:%S")<CR>
+inoremap ,todo todo: <C-R>=strftime("%Y/%m/%d %H:%M:%S")<CR>
+inoremap ,done done: <C-R>=strftime("%Y/%m/%d %H:%M:%S")<CR>
 iabbrev ,# # -------------------------------------------------------------------------
 iabbrev .# # =========================================================================
 
