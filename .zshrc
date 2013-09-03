@@ -153,6 +153,7 @@ alias g='git'
 alias gb='git branch'
 alias gba='git branch -a'
 alias gc='git checkout'
+alias gst='git status'
 alias ta='tmux a'
 
 # compdef
