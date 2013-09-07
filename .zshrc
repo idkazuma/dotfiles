@@ -152,7 +152,8 @@ alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
 alias g='git'
 alias gb='git branch -a'
 alias gc='git checkout'
-alias gst='git status'
+alias gs='git status'
+alias gsb='git status -sb'
 alias ta='tmux a'
 
 # compdef
