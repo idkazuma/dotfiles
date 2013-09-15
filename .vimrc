@@ -44,9 +44,9 @@ elseif has('mac')
   " colorscheme darkblue
   let g:solarized_termcolors=256
   " exe "hi Comment" . s:fg_base01 .s:bg_base02 .s:fmt_none
-  " let g:solarized_termtrans=1
-  let g:solarized_visibility="high"
+  " let g:solarized_visibility="high"
   let g:solarized_contrast="high"
+  let g:solarized_termtrans=1
   colorscheme solarized
   set background=dark
 
