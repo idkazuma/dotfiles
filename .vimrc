@@ -162,7 +162,8 @@ set iminsert=0 imsearch=0
 " Hard Tabs
 " set listchars=tab:>-,trail:%,eol:↲,nbsp:x
 " set listchars=tab:>-,eol:↲,nbsp:x
-set listchars=tab:>-,eol:↲
+" set listchars=tab:>-,eol:↲
+set listchars=tab:>-
 set list
 
 
