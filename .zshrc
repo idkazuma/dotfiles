@@ -14,6 +14,11 @@ if [ -d ${HOME}/.plenv  ] ; then
     export PATH=${HOME}/.plenv/bin/:${HOME}/.plenv/shims:${PATH}
     eval "$(plenv init - zsh)"
 fi
+# ndenv
+if [ -d ${HOME}/.ndenv  ] ; then
+    export PATH=${HOME}/.ndenv/bin/:${HOME}/.ndenv/shims:${PATH}
+    eval "$(ndenv init - zsh)"
+fi
 
 # unset PS1
 PS1=%F{5}%#%f
