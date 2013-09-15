@@ -232,9 +232,12 @@ let g:indent_guides_auto_colors=0
 " 奇数インデントのガイドカラー
 "hi IndentGuidesOdd  ctermbg=green
 hi IndentGuidesOdd  ctermbg=yellow
+" hi IndentGuidesOdd  ctermbg=gray
+
 " 偶数インデントのガイドカラー
 "hi IndentGuidesEven ctermbg=lightcyan
-hi IndentGuidesEven ctermbg=lightcyan
+" hi IndentGuidesEven ctermbg=yellow
+hi IndentGuidesEven ctermbg=gray
 
 " ハイライト色の変化の幅 (Terminal では未サポート)
 "let g:indent_guides_color_change_percent = 20
