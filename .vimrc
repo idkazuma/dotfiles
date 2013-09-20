@@ -221,30 +221,19 @@ highlight CursorLine ctermbg=darkblue guibg=darkblue
 " vim-indent-guides
 "===================================================================
 " vim立ち上げたときに、自動的にvim-indent-guidesをオンにする
-let g:indent_guides_enable_on_vim_startup=1
-
+" let g:indent_guides_enable_on_vim_startup=1
 " 1インデント目からガイドする
 let g:indent_guides_start_level=1
-
 " 自動カラーを無効にする
 let g:indent_guides_auto_colors=0
-
 " 奇数インデントのガイドカラー
-"hi IndentGuidesOdd  ctermbg=green
 hi IndentGuidesOdd  ctermbg=yellow
-" hi IndentGuidesOdd  ctermbg=gray
-
 " 偶数インデントのガイドカラー
-"hi IndentGuidesEven ctermbg=lightcyan
-" hi IndentGuidesEven ctermbg=yellow
 hi IndentGuidesEven ctermbg=gray
-
 " ハイライト色の変化の幅 (Terminal では未サポート)
 "let g:indent_guides_color_change_percent = 20
-
 " ガイドの幅
 let g:indent_guides_guide_size = 1
-
 " ガイド幅をインデント幅に合わせる
 "let g:indent_guides_guide_size = &tabstop
 
