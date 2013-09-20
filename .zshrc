@@ -19,6 +19,11 @@ if [ -d ${HOME}/.ndenv  ] ; then
     export PATH=${HOME}/.ndenv/bin/:${HOME}/.ndenv/shims:${PATH}
     eval "$(ndenv init - zsh)"
 fi
+# pyenv
+if [ -d ${HOME}/.pyenv  ] ; then
+    export PATH=${HOME}/.pyenv/bin/:${HOME}/.pyenv/shims:${PATH}
+    eval "$(pyenv init - zsh)"
+fi
 
 # unset PS1
 PS1=%F{5}%#%f
