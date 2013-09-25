@@ -195,7 +195,7 @@ au BufEnter * execute ":lcd " . expand("%:p:h")
 
 
 " ChangeLog
-let g:changelog_username = 'kazuma <idkazuma@gmail.com>'
+let g:changelog_username = 'Kazuma Furuhashi <idkazuma@gmail.com>'
 
 " netrw tree view
 let g:netrw_liststyle = 3
