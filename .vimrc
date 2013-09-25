@@ -19,6 +19,7 @@ else
   " Bundle 'git://github.com/vim-ruby/vim-ruby.git'
 
   Bundle 'nathanaelkane/vim-indent-guides'
+  Bundle 'tpope/vim-fugitive'
   " Bundle 'scrooloose/nerdcommenter'
   " Bundle 'tpope/vim-surround'
   " Bundle 'thinca/vim-quickrun'
