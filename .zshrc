@@ -4,26 +4,51 @@ stty intr 
 # path
 
 # rbenv
-if [ -d ${HOME}/.rbenv  ] ; then
+if [ -d ${HOME}/.rbenv ]; then
     # shims は tmux のため
     export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/shims:${PATH}"
     eval "$(rbenv init - zsh)"
+    # phpenv
+    # --------------------------------------------------
+    # IMPORTANT NOTES
+    # For rbenv users: Make sure that ~/.rbenv/bin takes
+    # precedence in the PATH over ~/.phpenv/bin by placing
+    # it before, so rbenv gets used from ~/.rbenv.
+    # --------------------------------------------------
+    if [ -d ${HOME}/.phpenv ]; then
+#         export PATH="${HOME}/.rbenv/bin:${HOME}/.rbenv/shims:${HOME}/.phpenv/bin:${HOME}/.phpenv/shims:${PATH}"
+        export PATH="${PATH}:${HOME}/.phpenv/bin:${HOME}/.phpenv/shims"
+#         export PATH="${HOME}/.phpenv/bin:${HOME}/.phpenv/shims:${PATH}"
+        eval "$(phpenv init - zsh)"
+#        eval "$(rbenv init - zsh)"
+    fi
 fi
 # plenv
-if [ -d ${HOME}/.plenv  ] ; then
+if [ -d ${HOME}/.plenv  ]; then
     export PATH=${HOME}/.plenv/bin/:${HOME}/.plenv/shims:${PATH}
     eval "$(plenv init - zsh)"
 fi
 # ndenv
-if [ -d ${HOME}/.ndenv  ] ; then
+if [ -d ${HOME}/.ndenv  ]; then
     export PATH=${HOME}/.ndenv/bin/:${HOME}/.ndenv/shims:${PATH}
     eval "$(ndenv init - zsh)"
 fi
 # pyenv
-if [ -d ${HOME}/.pyenv  ] ; then
+if [ -d ${HOME}/.pyenv  ]; then
     export PATH=${HOME}/.pyenv/bin/:${HOME}/.pyenv/shims:${PATH}
     eval "$(pyenv init - zsh)"
 fi
+# phpenv
+# --------------------------------------------------
+# IMPORTANT NOTES
+# For rbenv users: Make sure that ~/.rbenv/bin takes
+# precedence in the PATH over ~/.phpenv/bin by placing
+# it before, so rbenv gets used from ~/.rbenv.
+# --------------------------------------------------
+# if [ -d ${HOME}/.phpenv  ] ; then
+#     export PATH=${PATH}:${HOME}/.phpenv/bin/:${HOME}/.phpenv/shims
+#     eval "$(phpenv init - zsh)"
+# fi
 
 # unset PS1
 PS1=%F{5}%#%f
@@ -126,12 +151,38 @@ HISTSIZE=100000
 SAVEHIST=1000000
 # 重複を記録しない
 setopt hist_ignore_dups
+# スペースで始まるコマンド行はヒストリリストから削除
 setopt hist_ignore_space
 # setopt hist_reduce_blanks
 # 履歴ファイルを共有
 setopt share_history
 # 実行時刻と実行時間も保存する
 setopt extended_history
+function history-all { history -E 1 } # 全履歴の一覧を出力す
+
+autoload history-search-end
+zle -N history-beginning-search-backward-end history-search-end
+zle -N history-beginning-search-forward-end history-search-end
+bindkey "^P" history-beginning-search-backward-end
+bindkey "^N" history-beginning-search-forward-end
+
+# ヒストリに追加されるコマンド行が古いものと同じなら古いものを削除
+# setopt hist_ignore_all_dups
+# ヒストリを呼び出してから実行する間に一旦編集可能
+# setopt hist_verify
+# 余分な空白は詰めて記録
+# setopt hist_reduce_blanks
+# 古いコマンドと同じものは無視
+# setopt hist_save_no_dups
+# historyコマンドは履歴に登録しない
+# setopt hist_no_store
+# 補完時にヒストリを自動的に展開
+# setopt hist_expand
+# 履歴をインクリメンタルに追加
+# setopt inc_append_history
+# インクリメンタルからの検索
+# bindkey "^R" history-incremental-search-backward
+# bindkey "^S" history-incremental-search-forward
 
 # 3秒以上かかったら報告
 REPORTTIME=3
@@ -139,13 +190,6 @@ REPORTTIME=3
 # 補完候補をつめて表示する
 setopt list_packed
 
-
-# history 操作まわり
-autoload history-search-end
-zle -N history-beginning-search-backward-end history-search-end
-zle -N history-beginning-search-forward-end history-search-end
-bindkey "^P" history-beginning-search-backward-end
-bindkey "^N" history-beginning-search-forward-end
 
 # alias
 case ${OSTYPE} in
