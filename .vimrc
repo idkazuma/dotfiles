@@ -25,6 +25,10 @@ else
   " Bundle 'thinca/vim-quickrun'
   " Bundle 'thinca/vim-ref'
   " Bundle 'kana/vim-fakeclip'
+
+  " :OverCommandLine で起動する
+  Bundle 'osyo-manga/vim-over'
+
 endif
 
 " grep後にcwinを表示
