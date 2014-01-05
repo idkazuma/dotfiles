@@ -29,6 +29,10 @@ else
   " :OverCommandLine で起動する
   Bundle 'osyo-manga/vim-over'
 
+  " :Unite codic
+  Bundle 'koron/codic-vim'
+  Bundle 'rhysd/unite-codic.vim'
+
 endif
 
 " grep後にcwinを表示
