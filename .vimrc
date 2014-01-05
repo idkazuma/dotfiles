@@ -129,16 +129,16 @@ set ic
 " tab じゃない space
 set expandtab
 
-set tabstop=4
-set shiftwidth=4
-autocmd FileType perl set tabstop=2
-autocmd FileType perl set shiftwidth=2
-autocmd FileType ruby set tabstop=2
-autocmd FileType ruby set shiftwidth=2
-autocmd FileType eruby set tabstop=2
-autocmd FileType eruby set shiftwidth=2
-autocmd FileType javascript set tabstop=2
-autocmd FileType javascript set shiftwidth=2
+set tabstop=2
+set shiftwidth=2
+" autocmd FileType perl set tabstop=2
+" autocmd FileType perl set shiftwidth=2
+" autocmd FileType ruby set tabstop=2
+" autocmd FileType ruby set shiftwidth=2
+" autocmd FileType eruby set tabstop=2
+" autocmd FileType eruby set shiftwidth=2
+" autocmd FileType javascript set tabstop=2
+" autocmd FileType javascript set shiftwidth=2
 
 
 
