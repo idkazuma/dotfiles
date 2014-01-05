@@ -3,6 +3,16 @@ stty intr 
 
 # path
 
+case ${OSTYPE} in
+  darwin*)
+    export PATH="${HOME}/ios/cocos2d-x-2.2.1/tools/project-creator:${PATH}"
+    ;;
+  linux*)
+    ;;
+esac
+
+
+
 # rbenv
 if [ -d ${HOME}/.rbenv ]; then
     # shims は tmux のため
@@ -242,4 +252,7 @@ compdef mosh=ssh
 
 # 個別設定を読み込む
 [ -f ~/.zshrc.mine ] && source ~/.zshrc.mine
+
+# added by travis gem
+[ -f ${HOME}/.travis/travis.sh ] && source ${HOME}/.travis/travis.sh
 
